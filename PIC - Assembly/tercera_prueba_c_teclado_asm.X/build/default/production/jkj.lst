@@ -1,0 +1,9 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                                           Thu Mar 28 11:08:19 2019
+
+
+     1                           	processor	16F877A
+     2                           	opt	pw 132
+     3                           	psect	pa_nodes0,global,class=CODE,delta=2

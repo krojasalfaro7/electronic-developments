@@ -1,0 +1,713 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                               Wed Mar 27 19:32:04 2019
+
+Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	psect	text1,local,class=CODE,merge=1,delta=2
+     8                           	psect	text2,local,class=CODE,merge=1,delta=2
+     9                           	psect	text3,local,class=CODE,merge=1,delta=2
+    10                           	psect	text4,local,class=CODE,merge=1,delta=2
+    11                           	dabs	1,0x7E,2
+    12  0000                     
+    13                           ; Version 2.05
+    14                           ; Generated 20/12/2018 GMT
+    15                           ; 
+    16                           ; Copyright © 2018, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    17                           ; All rights reserved.
+    18                           ; 
+    19                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    20                           ; 
+    21                           ; Redistribution and use in source and binary forms, with or without modification, are
+    22                           ; permitted provided that the following conditions are met:
+    23                           ; 
+    24                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    25                           ;        conditions and the following disclaimer.
+    26                           ; 
+    27                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    28                           ;        of conditions and the following disclaimer in the documentation and/or other
+    29                           ;        materials provided with the distribution.
+    30                           ; 
+    31                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    32                           ;        software without specific prior written permission.
+    33                           ; 
+    34                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    35                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    36                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    37                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    38                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    39                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    40                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    41                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    42                           ; 
+    43                           ; 
+    44                           ; Code-generator required, PIC16F877A Definitions
+    45                           ; 
+    46                           ; SFR Addresses
+    47  0000                     	;# 
+    48  0001                     	;# 
+    49  0002                     	;# 
+    50  0003                     	;# 
+    51  0004                     	;# 
+    52  0005                     	;# 
+    53  0006                     	;# 
+    54  0007                     	;# 
+    55  0008                     	;# 
+    56  0009                     	;# 
+    57  000A                     	;# 
+    58  000B                     	;# 
+    59  000C                     	;# 
+    60  000D                     	;# 
+    61  000E                     	;# 
+    62  000E                     	;# 
+    63  000F                     	;# 
+    64  0010                     	;# 
+    65  0011                     	;# 
+    66  0012                     	;# 
+    67  0013                     	;# 
+    68  0014                     	;# 
+    69  0015                     	;# 
+    70  0015                     	;# 
+    71  0016                     	;# 
+    72  0017                     	;# 
+    73  0018                     	;# 
+    74  0019                     	;# 
+    75  001A                     	;# 
+    76  001B                     	;# 
+    77  001B                     	;# 
+    78  001C                     	;# 
+    79  001D                     	;# 
+    80  001E                     	;# 
+    81  001F                     	;# 
+    82  0081                     	;# 
+    83  0085                     	;# 
+    84  0086                     	;# 
+    85  0087                     	;# 
+    86  0088                     	;# 
+    87  0089                     	;# 
+    88  008C                     	;# 
+    89  008D                     	;# 
+    90  008E                     	;# 
+    91  0091                     	;# 
+    92  0092                     	;# 
+    93  0093                     	;# 
+    94  0094                     	;# 
+    95  0098                     	;# 
+    96  0099                     	;# 
+    97  009C                     	;# 
+    98  009D                     	;# 
+    99  009E                     	;# 
+   100  009F                     	;# 
+   101  010C                     	;# 
+   102  010D                     	;# 
+   103  010E                     	;# 
+   104  010F                     	;# 
+   105  018C                     	;# 
+   106  018D                     	;# 
+   107  0000                     	;# 
+   108  0001                     	;# 
+   109  0002                     	;# 
+   110  0003                     	;# 
+   111  0004                     	;# 
+   112  0005                     	;# 
+   113  0006                     	;# 
+   114  0007                     	;# 
+   115  0008                     	;# 
+   116  0009                     	;# 
+   117  000A                     	;# 
+   118  000B                     	;# 
+   119  000C                     	;# 
+   120  000D                     	;# 
+   121  000E                     	;# 
+   122  000E                     	;# 
+   123  000F                     	;# 
+   124  0010                     	;# 
+   125  0011                     	;# 
+   126  0012                     	;# 
+   127  0013                     	;# 
+   128  0014                     	;# 
+   129  0015                     	;# 
+   130  0015                     	;# 
+   131  0016                     	;# 
+   132  0017                     	;# 
+   133  0018                     	;# 
+   134  0019                     	;# 
+   135  001A                     	;# 
+   136  001B                     	;# 
+   137  001B                     	;# 
+   138  001C                     	;# 
+   139  001D                     	;# 
+   140  001E                     	;# 
+   141  001F                     	;# 
+   142  0081                     	;# 
+   143  0085                     	;# 
+   144  0086                     	;# 
+   145  0087                     	;# 
+   146  0088                     	;# 
+   147  0089                     	;# 
+   148  008C                     	;# 
+   149  008D                     	;# 
+   150  008E                     	;# 
+   151  0091                     	;# 
+   152  0092                     	;# 
+   153  0093                     	;# 
+   154  0094                     	;# 
+   155  0098                     	;# 
+   156  0099                     	;# 
+   157  009C                     	;# 
+   158  009D                     	;# 
+   159  009E                     	;# 
+   160  009F                     	;# 
+   161  010C                     	;# 
+   162  010D                     	;# 
+   163  010E                     	;# 
+   164  010F                     	;# 
+   165  018C                     	;# 
+   166  018D                     	;# 
+   167  0000                     	;# 
+   168  0001                     	;# 
+   169  0002                     	;# 
+   170  0003                     	;# 
+   171  0004                     	;# 
+   172  0005                     	;# 
+   173  0006                     	;# 
+   174  0007                     	;# 
+   175  0008                     	;# 
+   176  0009                     	;# 
+   177  000A                     	;# 
+   178  000B                     	;# 
+   179  000C                     	;# 
+   180  000D                     	;# 
+   181  000E                     	;# 
+   182  000E                     	;# 
+   183  000F                     	;# 
+   184  0010                     	;# 
+   185  0011                     	;# 
+   186  0012                     	;# 
+   187  0013                     	;# 
+   188  0014                     	;# 
+   189  0015                     	;# 
+   190  0015                     	;# 
+   191  0016                     	;# 
+   192  0017                     	;# 
+   193  0018                     	;# 
+   194  0019                     	;# 
+   195  001A                     	;# 
+   196  001B                     	;# 
+   197  001B                     	;# 
+   198  001C                     	;# 
+   199  001D                     	;# 
+   200  001E                     	;# 
+   201  001F                     	;# 
+   202  0081                     	;# 
+   203  0085                     	;# 
+   204  0086                     	;# 
+   205  0087                     	;# 
+   206  0088                     	;# 
+   207  0089                     	;# 
+   208  008C                     	;# 
+   209  008D                     	;# 
+   210  008E                     	;# 
+   211  0091                     	;# 
+   212  0092                     	;# 
+   213  0093                     	;# 
+   214  0094                     	;# 
+   215  0098                     	;# 
+   216  0099                     	;# 
+   217  009C                     	;# 
+   218  009D                     	;# 
+   219  009E                     	;# 
+   220  009F                     	;# 
+   221  010C                     	;# 
+   222  010D                     	;# 
+   223  010E                     	;# 
+   224  010F                     	;# 
+   225  018C                     	;# 
+   226  018D                     	;# 
+   227  0008                     _PORTD	set	8
+   228  0006                     _PORTB	set	6
+   229  0019                     _TXREG	set	25
+   230  001A                     _RCREG	set	26
+   231  000C                     _PIR1bits	set	12
+   232  0018                     _RCSTA	set	24
+   233  0088                     _TRISD	set	136
+   234  0086                     _TRISB	set	134
+   235  0098                     _TXSTAbits	set	152
+   236  0099                     _SPBRG	set	153
+   237  0098                     _TXSTA	set	152
+   238                           
+   239                           ; #config settings
+   240  0000                     
+   241                           	psect	cinit
+   242  07FC                     start_initialization:	
+   243  07FC                     __initialization:	
+   244  07FC                     end_of_initialization:	
+   245                           ;End of C runtime variable initialization code
+   246                           
+   247  07FC                     __end_of__initialization:	
+   248  07FC  0183               	clrf	3
+   249  07FD  120A  118A  2FDC   	ljmp	_main	;jump to C main() function
+   250                           
+   251                           	psect	cstackCOMMON
+   252  0070                     __pcstackCOMMON:	
+   253  0070                     ?_config_ports:	
+   254  0070                     ??_config_ports:	
+   255                           ; 1 bytes @ 0x0
+   256                           
+   257  0070                     ?_iniciar_usart:	
+   258                           ; 1 bytes @ 0x0
+   259                           
+   260  0070                     ??_iniciar_usart:	
+   261                           ; 1 bytes @ 0x0
+   262                           
+   263  0070                     ?_recibe_caracter_usart:	
+   264                           ; 1 bytes @ 0x0
+   265                           
+   266  0070                     ??_recibe_caracter_usart:	
+   267                           ; 1 bytes @ 0x0
+   268                           
+   269  0070                     ?_envia_caracter_usart:	
+   270                           ; 1 bytes @ 0x0
+   271                           
+   272  0070                     ??_envia_caracter_usart:	
+   273                           ; 1 bytes @ 0x0
+   274                           
+   275  0070                     ?_main:	
+   276                           ; 1 bytes @ 0x0
+   277                           
+   278  0070                     envia_caracter_usart@caracter:	
+   279                           ; 1 bytes @ 0x0
+   280                           
+   281                           
+   282                           ; 1 bytes @ 0x0
+   283  0070                     	ds	1
+   284  0071                     ??_main:	
+   285                           
+   286                           ; 1 bytes @ 0x1
+   287  0071                     	ds	1
+   288                           
+   289                           	psect	maintext
+   290  07DC                     __pmaintext:	
+   291 ;;
+   292 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   293 ;;
+   294 ;; *************** function _main *****************
+   295 ;; Defined at:
+   296 ;;		line 28 in file "main.c"
+   297 ;; Parameters:    Size  Location     Type
+   298 ;;		None
+   299 ;; Auto vars:     Size  Location     Type
+   300 ;;		None
+   301 ;; Return value:  Size  Location     Type
+   302 ;;                  1    wreg      void 
+   303 ;; Registers used:
+   304 ;;		wreg, status,2, status,0, pclath, cstack
+   305 ;; Tracked objects:
+   306 ;;		On entry : B00/0
+   307 ;;		On exit  : 0/0
+   308 ;;		Unchanged: 0/0
+   309 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   310 ;;      Params:         0       0       0       0       0
+   311 ;;      Locals:         0       0       0       0       0
+   312 ;;      Temps:          1       0       0       0       0
+   313 ;;      Totals:         1       0       0       0       0
+   314 ;;Total ram usage:        1 bytes
+   315 ;; Hardware stack levels required when called:    1
+   316 ;; This function calls:
+   317 ;;		_config_ports
+   318 ;;		_envia_caracter_usart
+   319 ;;		_iniciar_usart
+   320 ;;		_recibe_caracter_usart
+   321 ;; This function is called by:
+   322 ;;		Startup code after reset
+   323 ;; This function uses a non-reentrant model
+   324 ;;
+   325                           
+   326                           
+   327                           ;psect for function _main
+   328  07DC                     _main:	
+   329                           
+   330                           ;incstack = 0
+   331                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   332  07DC  120A  118A  27CD  120A  118A  	fcall	_iniciar_usart
+   333  07E1  120A  118A  27B9  120A  118A  	fcall	_config_ports
+   334  07E6                     l46:	
+   335  07E6  1283               	bcf	3,5	;RP0=0, select bank0
+   336  07E7  1303               	bcf	3,6	;RP1=0, select bank0
+   337  07E8  0806               	movf	6,w	;volatile
+   338  07E9  120A  118A  27C3  120A  118A  	fcall	_envia_caracter_usart
+   339  07EE  3010               	movlw	16
+   340  07EF  00F1               	movwf	??_main
+   341  07F0                     u47:	
+   342  07F0  0BF1               	decfsz	??_main,f
+   343  07F1  2FF0               	goto	u47
+   344  07F2  0000               	nop
+   345  07F3  120A  118A  27B3  120A  118A  	fcall	_recibe_caracter_usart
+   346  07F8  1283               	bcf	3,5	;RP0=0, select bank0
+   347  07F9  1303               	bcf	3,6	;RP1=0, select bank0
+   348  07FA  0088               	movwf	8	;volatile
+   349  07FB  2FE6               	goto	l46
+   350  07FC                     __end_of_main:	
+   351                           
+   352                           	psect	text1
+   353  07B3                     __ptext1:	
+   354 ;; *************** function _recibe_caracter_usart *****************
+   355 ;; Defined at:
+   356 ;;		line 32 in file "./usart.h"
+   357 ;; Parameters:    Size  Location     Type
+   358 ;;		None
+   359 ;; Auto vars:     Size  Location     Type
+   360 ;;		None
+   361 ;; Return value:  Size  Location     Type
+   362 ;;                  1    wreg      unsigned char 
+   363 ;; Registers used:
+   364 ;;		wreg
+   365 ;; Tracked objects:
+   366 ;;		On entry : 0/0
+   367 ;;		On exit  : 0/0
+   368 ;;		Unchanged: 0/0
+   369 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   370 ;;      Params:         0       0       0       0       0
+   371 ;;      Locals:         0       0       0       0       0
+   372 ;;      Temps:          0       0       0       0       0
+   373 ;;      Totals:         0       0       0       0       0
+   374 ;;Total ram usage:        0 bytes
+   375 ;; Hardware stack levels used:    1
+   376 ;; This function calls:
+   377 ;;		Nothing
+   378 ;; This function is called by:
+   379 ;;		_main
+   380 ;; This function uses a non-reentrant model
+   381 ;;
+   382                           
+   383                           
+   384                           ;psect for function _recibe_caracter_usart
+   385  07B3                     _recibe_caracter_usart:	
+   386                           
+   387                           ;./usart.h: 33:     if(PIR1bits.RCIF==1){
+   388                           
+   389                           ;incstack = 0
+   390                           ; Regs used in _recibe_caracter_usart: [wreg]
+   391  07B3  1283               	bcf	3,5	;RP0=0, select bank0
+   392  07B4  1303               	bcf	3,6	;RP1=0, select bank0
+   393  07B5  1E8C               	btfss	12,5	;volatile
+   394  07B6  0008               	return
+   395                           
+   396                           ;./usart.h: 34:     return RCREG;
+   397  07B7  081A               	movf	26,w	;volatile
+   398  07B8  0008               	return
+   399  07B9                     __end_of_recibe_caracter_usart:	
+   400                           
+   401                           	psect	text2
+   402  07CD                     __ptext2:	
+   403 ;; *************** function _iniciar_usart *****************
+   404 ;; Defined at:
+   405 ;;		line 17 in file "./usart.h"
+   406 ;; Parameters:    Size  Location     Type
+   407 ;;		None
+   408 ;; Auto vars:     Size  Location     Type
+   409 ;;		None
+   410 ;; Return value:  Size  Location     Type
+   411 ;;                  1    wreg      void 
+   412 ;; Registers used:
+   413 ;;		wreg
+   414 ;; Tracked objects:
+   415 ;;		On entry : 0/0
+   416 ;;		On exit  : 0/0
+   417 ;;		Unchanged: 0/0
+   418 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   419 ;;      Params:         0       0       0       0       0
+   420 ;;      Locals:         0       0       0       0       0
+   421 ;;      Temps:          0       0       0       0       0
+   422 ;;      Totals:         0       0       0       0       0
+   423 ;;Total ram usage:        0 bytes
+   424 ;; Hardware stack levels used:    1
+   425 ;; This function calls:
+   426 ;;		Nothing
+   427 ;; This function is called by:
+   428 ;;		_main
+   429 ;; This function uses a non-reentrant model
+   430 ;;
+   431                           
+   432                           
+   433                           ;psect for function _iniciar_usart
+   434  07CD                     _iniciar_usart:	
+   435                           
+   436                           ;incstack = 0
+   437                           ; Regs used in _iniciar_usart: [wreg]
+   438  07CD  1787               	bsf	135,7	;# 
+   439  07CE  1307               	bcf	135,6	;# 
+   440                           
+   441                           ;./usart.h: 24:      TXSTA=0b00100110;
+   442  07CF  3026               	movlw	38
+   443  07D0  1683               	bsf	3,5	;RP0=1, select bank1
+   444  07D1  1303               	bcf	3,6	;RP1=0, select bank1
+   445  07D2  0098               	movwf	24	;volatile
+   446                           
+   447                           ;./usart.h: 25:      RCSTA=0b10010000;
+   448  07D3  3090               	movlw	144
+   449  07D4  1283               	bcf	3,5	;RP0=0, select bank0
+   450  07D5  1303               	bcf	3,6	;RP1=0, select bank0
+   451  07D6  0098               	movwf	24	;volatile
+   452                           
+   453                           ;./usart.h: 26:      SPBRG=25;
+   454  07D7  3019               	movlw	25
+   455  07D8  1683               	bsf	3,5	;RP0=1, select bank1
+   456  07D9  1303               	bcf	3,6	;RP1=0, select bank1
+   457  07DA  0099               	movwf	25	;volatile
+   458  07DB  0008               	return
+   459  07DC                     __end_of_iniciar_usart:	
+   460                           
+   461                           	psect	text3
+   462  07C3                     __ptext3:	
+   463 ;; *************** function _envia_caracter_usart *****************
+   464 ;; Defined at:
+   465 ;;		line 44 in file "./usart.h"
+   466 ;; Parameters:    Size  Location     Type
+   467 ;;  caracter        1    wreg     unsigned char 
+   468 ;; Auto vars:     Size  Location     Type
+   469 ;;  caracter        1    0[COMMON] unsigned char 
+   470 ;; Return value:  Size  Location     Type
+   471 ;;                  1    wreg      void 
+   472 ;; Registers used:
+   473 ;;		wreg
+   474 ;; Tracked objects:
+   475 ;;		On entry : 0/0
+   476 ;;		On exit  : 0/0
+   477 ;;		Unchanged: 0/0
+   478 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   479 ;;      Params:         0       0       0       0       0
+   480 ;;      Locals:         1       0       0       0       0
+   481 ;;      Temps:          0       0       0       0       0
+   482 ;;      Totals:         1       0       0       0       0
+   483 ;;Total ram usage:        1 bytes
+   484 ;; Hardware stack levels used:    1
+   485 ;; This function calls:
+   486 ;;		Nothing
+   487 ;; This function is called by:
+   488 ;;		_main
+   489 ;;		_envia_cadena_usart
+   490 ;; This function uses a non-reentrant model
+   491 ;;
+   492                           
+   493                           
+   494                           ;psect for function _envia_caracter_usart
+   495  07C3                     _envia_caracter_usart:	
+   496                           
+   497                           ;incstack = 0
+   498                           ; Regs used in _envia_caracter_usart: [wreg]
+   499                           ;envia_caracter_usart@caracter stored from wreg
+   500  07C3  00F0               	movwf	envia_caracter_usart@caracter
+   501  07C4                     l32:	
+   502                           ;./usart.h: 45:         while(TXSTAbits.TRMT==0);
+   503                           
+   504  07C4  1683               	bsf	3,5	;RP0=1, select bank1
+   505  07C5  1303               	bcf	3,6	;RP1=0, select bank1
+   506  07C6  1C98               	btfss	24,1	;volatile
+   507  07C7  2FC4               	goto	l32
+   508                           
+   509                           ;./usart.h: 46:  TXREG = caracter;
+   510  07C8  0870               	movf	envia_caracter_usart@caracter,w
+   511  07C9  1283               	bcf	3,5	;RP0=0, select bank0
+   512  07CA  1303               	bcf	3,6	;RP1=0, select bank0
+   513  07CB  0099               	movwf	25	;volatile
+   514  07CC  0008               	return
+   515  07CD                     __end_of_envia_caracter_usart:	
+   516                           
+   517                           	psect	text4
+   518  07B9                     __ptext4:	
+   519 ;; *************** function _config_ports *****************
+   520 ;; Defined at:
+   521 ;;		line 10 in file "config.c"
+   522 ;; Parameters:    Size  Location     Type
+   523 ;;		None
+   524 ;; Auto vars:     Size  Location     Type
+   525 ;;		None
+   526 ;; Return value:  Size  Location     Type
+   527 ;;                  1    wreg      void 
+   528 ;; Registers used:
+   529 ;;		wreg, status,2
+   530 ;; Tracked objects:
+   531 ;;		On entry : 0/0
+   532 ;;		On exit  : 0/0
+   533 ;;		Unchanged: 0/0
+   534 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   535 ;;      Params:         0       0       0       0       0
+   536 ;;      Locals:         0       0       0       0       0
+   537 ;;      Temps:          0       0       0       0       0
+   538 ;;      Totals:         0       0       0       0       0
+   539 ;;Total ram usage:        0 bytes
+   540 ;; Hardware stack levels used:    1
+   541 ;; This function calls:
+   542 ;;		Nothing
+   543 ;; This function is called by:
+   544 ;;		_main
+   545 ;; This function uses a non-reentrant model
+   546 ;;
+   547                           
+   548                           
+   549                           ;psect for function _config_ports
+   550  07B9                     _config_ports:	
+   551                           
+   552                           ;config.c: 11:     TRISB = 0xff;
+   553                           
+   554                           ;incstack = 0
+   555                           ; Regs used in _config_ports: [wreg+status,2]
+   556  07B9  30FF               	movlw	255
+   557  07BA  1683               	bsf	3,5	;RP0=1, select bank1
+   558  07BB  1303               	bcf	3,6	;RP1=0, select bank1
+   559  07BC  0086               	movwf	6	;volatile
+   560                           
+   561                           ;config.c: 12:     TRISD = 0x00;
+   562  07BD  0188               	clrf	8	;volatile
+   563                           
+   564                           ;config.c: 13:     PORTB = 0x00, PORTD = 0x00;
+   565  07BE  1283               	bcf	3,5	;RP0=0, select bank0
+   566  07BF  1303               	bcf	3,6	;RP1=0, select bank0
+   567  07C0  0186               	clrf	6	;volatile
+   568  07C1  0188               	clrf	8	;volatile
+   569  07C2  0008               	return
+   570  07C3                     __end_of_config_ports:	
+   571  007E                     btemp	set	126	;btemp
+   572  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       2
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_envia_caracter_usart
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0      15
+                                              1 COMMON     1     1      0
+                       _config_ports
+               _envia_caracter_usart
+                      _iniciar_usart
+              _recibe_caracter_usart
+ ---------------------------------------------------------------------------------
+ (1) _recibe_caracter_usart                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _iniciar_usart                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _envia_caracter_usart                                 1     1      0      15
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _config_ports                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _config_ports
+   _envia_caracter_usart
+   _iniciar_usart
+   _recibe_caracter_usart
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      2       2       1       14.3%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                   Wed Mar 27 19:32:04 2019
+
+                   __CFG_CP$OFF 0000                              l32 07C4                              l46 07E6  
+                            u47 07F0                    __CFG_CPD$OFF 0000                    __CFG_FOSC$XT 0000  
+                  __CFG_LVP$OFF 0000                            TRISC 0087                    __CFG_WRT$OFF 0000  
+                          _main 07DC                            btemp 007E                   __CFG_BOREN$ON 0000  
+                          start 0000                  ??_config_ports 0070                           ?_main 0070  
+                 __CFG_WDTE$OFF 0000                           _RCREG 001A                           _RCSTA 0018  
+                         _SPBRG 0099                           _PORTB 0006                           _PORTD 0008  
+                         _TRISB 0086                           _TRISD 0088                           _TXREG 0019  
+                         _TXSTA 0098          __size_of_iniciar_usart 000F                   __CFG_PWRTE$ON 0000  
+  envia_caracter_usart@caracter 0070                           status 0003                           wtemp0 007E  
+               __initialization 07FC                    __end_of_main 07FC                          ??_main 0071  
+                 _iniciar_usart 07CD           _recibe_caracter_usart 07B3            __end_of_config_ports 07C3  
+ __size_of_envia_caracter_usart 000A         __end_of__initialization 07FC                  ?_iniciar_usart 0070  
+                __pcstackCOMMON 0070                      __pmaintext 07DC          ?_recibe_caracter_usart 0070  
+               ??_iniciar_usart 0070           __size_of_config_ports 000A                         __ptext1 07B3  
+                       __ptext2 07CD                         __ptext3 07C3                         __ptext4 07B9  
+          end_of_initialization 07FC                    _config_ports 07B9                       _TXSTAbits 0098  
+  __end_of_envia_caracter_usart 07CD             start_initialization 07FC         ??_recibe_caracter_usart 0070  
+                     ___latbits 0002            _envia_caracter_usart 07C3           __end_of_iniciar_usart 07DC  
+                      _PIR1bits 000C           ?_envia_caracter_usart 0070                   __size_of_main 0020  
+__size_of_recibe_caracter_usart 0006   __end_of_recibe_caracter_usart 07B9          ??_envia_caracter_usart 0070  
+                 ?_config_ports 0070  

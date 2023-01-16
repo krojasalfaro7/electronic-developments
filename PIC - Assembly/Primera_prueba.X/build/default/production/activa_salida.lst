@@ -1,0 +1,28 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                                           Sun Mar 24 13:58:02 2019
+
+
+     1                           	processor	16F877A
+     2                           	opt	pw 132
+     3                           	psect	pa_nodes0,global,class=CODE,delta=2
+     4  0000                     	org	0	;
+     5  0000  1683               	bsf	3,5
+     6  0001  0188               	clrf	8
+     7  0002  30FF               	movlw	255
+     8  0003  0086               	movwf	6
+     9  0004  1283               	bcf	3,5	;
+    10  0005  0188               	clrf	8
+    11  0006  0186               	clrf	6
+    12  0007                     REPITE:	
+    13  0007  0806               	movf	6,w
+    14  0008  0088               	movwf	8
+    15  0009  2800'              	goto	REPITE
+
+
+Microchip Technology PIC Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                               Sun Mar 24 13:58:02 2019
+
+                        PORTB 0006                          PORTD 0008                         REPITE 0007  
+                       STATUS 0003  

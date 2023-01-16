@@ -1,0 +1,39 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                                           Sun Mar 24 17:07:45 2019
+
+
+     1                           	processor	16F877A
+     2                           	opt	pw 132
+     3                           	psect	barfunc,local,class=CODE,delta=2
+     4                           	psect	pa_nodes0,global,class=CODE,delta=2
+     5  0000                     stk_offset	set	0
+     6  0000                     auto_size	set	0
+     7                           
+     8                           ; stack_auto defines a symbol /name/_offset which equates to the
+     9                           ; stack offset of the auto object in question
+    10  0000                     
+    11                           ; stack_param defines a symbol /name/_offset which equates to the
+    12                           ; stack offset of the parameter object in question
+    13  0000                     
+    14                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    15                           ; it also links in to the btemp symbol so that can be used
+    16  0000                     
+    17                           ; restore_stack adjusts the SP to remove all auto and parameter
+    18                           ; objects from the stack prior to returning from a function
+    19  0000                     	; PIC10/12/16
+    20                           
+    21                           	psect	barfunc
+    22  07B7                     _bar:	
+    23  07B7  1487               	bsf	7,1
+    24  07B8  0008               	return
+    25  07B9                     _bar2:	
+    26  07B9  1087               	bcf	7,1
+    27  07BA  0008               	return
+
+
+Microchip Technology PIC Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                               Sun Mar 24 17:07:45 2019
+
+                         _bar 07B7                          PORTC 0007                          _bar2 07B9  

@@ -1,0 +1,51 @@
+
+
+Microchip MPLAB XC8 Assembler V2.05 build -831301201 
+                                                                                                           Thu Mar 28 11:08:19 2019
+
+
+     1                           	processor	16F877A
+     2                           	opt	pw 132
+     3                           	psect	umul8,local,class=CODE,delta=2
+     4                           	psect	pa_nodes0,global,class=CODE,delta=2
+     5  0000                     stk_offset	set	0
+     6  0000                     auto_size	set	0
+     7                           
+     8                           ; stack_auto defines a symbol /name/_offset which equates to the
+     9                           ; stack offset of the auto object in question
+    10  0000                     
+    11                           ; stack_param defines a symbol /name/_offset which equates to the
+    12                           ; stack offset of the parameter object in question
+    13  0000                     
+    14                           ; alloc_stack adjusts the SP to allocate space for auto objects
+    15                           ; it also links in to the btemp symbol so that can be used
+    16  0000                     
+    17                           ; restore_stack adjusts the SP to remove all auto and parameter
+    18                           ; objects from the stack prior to returning from a function
+    19  0000                     
+    20                           	psect	umul8
+    21  0000'                    _Umul8:	
+    22                           ; When assembly code is placed in a psect, it can be manipulated as a
+    23                           ; whole by the linker and placed in memory.
+    24                           ;
+    25                           ; In this example, barfunc is the program section (psect) name, 'local' means
+    26                           ; that the section will not be combined with other sections even if they have
+    27                           ; the same name. class=CODE means the barfunc must go in the CODE container.
+    28                           ; PIC18's should have a delta (addressible unit size) of 1 (default) since they
+    29                           ; are byte addressible. PIC10/12/16's have a delta of 2 since they are word
+    30                           ; addressible. PIC18's should have a reloc (alignment) flag of 2 for any
+    31                           ; psect which contains executable code. PIC10/12/16's can use the default
+    32                           ; reloc value of 1. Use one of the psects below for the device you use:
+    33                           
+    34  0000' 0188               	clrf	136
+    35  0001' 30FF               	movlw	255
+    36  0002' 0088               	movwf	8
+    37  0003' 0008               	return
+
+
+Microchip Technology PIC Macro Assembler V2.05 build -831301201 
+Symbol Table                                                                                               Thu Mar 28 11:08:19 2019
+
+                        PORTD 0008                          TRISD 0088                         _Umul8 0000  
+                       _mult1 0000*                        _mult2 0000*                      _res16hi 0000* 
+                     _res16lo 0000* 

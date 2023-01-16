@@ -1,0 +1,154 @@
+Microchip MPLAB XC8 Compiler V2.05 ()
+
+Linker command line:
+
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.05\pic\dat\en_msgs.txt \
+  -cs -h+dist/default/production\Primera_prueba.X.production.sym \
+  --cmf=dist/default/production\Primera_prueba.X.production.cmf -z -w9 \
+  --disl=596:off --norlf -Q16F877A \
+  -oC:\Users\KEVINR~1\AppData\Local\Temp\s5tk.2 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/Primera_prueba.X.production.map -E1 -ver=XC8 \
+  --acfsm=1493 -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
+  -ACONST=00h-0FFhx32 -AENTRY=00h-0FFhx32 -ACOMMON=070h-07Fh \
+  -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh -ABANK2=0110h-016Fh \
+  -ABANK3=0190h-01EFh -ARAM=020h-06Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh \
+  -AABS1=020h-07Fh,0A0h-0EFh,0110h-016Fh,0190h-01EFh -ASFR0=00h-01Fh \
+  -ASFR1=080h-09Fh -ASFR2=0100h-010Fh -ASFR3=0180h-018Fh \
+  -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
+  -pfunctab=ENTRY -ACONFIG=02007h-02007h -pconfig=CONFIG -DCONFIG=2 \
+  -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
+  -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
+  -DENTRY=2 -k C:\Users\KEVINR~1\AppData\Local\Temp\s5tk.o \
+  build/default/production/activa_salida.o 
+
+Object code version is 3.11
+
+Machine type is 16F877A
+
+
+
+                Name                               Link     Load   Length Selector   Space Scale
+C:\Users\KEVINR~1\AppData\Local\Temp\s5tk.o
+                end_init                              0        0        4        0       0
+build/default/production/activa_salida.o
+                (abs)                                 0        0        B        0       0
+
+TOTAL           Name                               Link     Load   Length     Space
+        CLASS   CODE           
+                end_init                              0        0        4         0
+
+        CLASS   STRCODE        
+
+        CLASS   STRING         
+
+        CLASS   CONST          
+
+        CLASS   ENTRY          
+
+        CLASS   COMMON         
+
+        CLASS   BANK0          
+
+        CLASS   BANK1          
+
+        CLASS   BANK2          
+
+        CLASS   BANK3          
+
+        CLASS   RAM            
+
+        CLASS   ABS1           
+
+        CLASS   SFR0           
+
+        CLASS   SFR1           
+
+        CLASS   SFR2           
+
+        CLASS   SFR3           
+
+        CLASS   CONFIG         
+
+        CLASS   IDLOC          
+
+        CLASS   EEDATA         
+
+        CLASS   STACK          
+
+        CLASS   UNCLASSED
+                (abs)                                 0        0        B         0
+
+
+SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
+
+                reset_vec                      000000  000004  000004         0       0  CODE        2
+
+
+UNUSED ADDRESS RANGES
+
+        Name                Unused          Largest block    Delta
+        BANK0            20-6F          50           1
+        BANK1            A0-EF          50           1
+        BANK2            110-16F          60           1
+        BANK3            190-1EF          60           1
+        CODE             4-1FFF         800           2
+        COMMON           70-7F          10           1
+        CONFIG           2007-2007           1           2
+        CONST            4-1FFF         100           2
+        EEDATA           2100-21FF         100           2
+        ENTRY            4-1FFF         100           2
+        IDLOC            2000-2003           4           2
+        RAM              20-6F          50           1
+                         A0-EF          50
+                         110-16F          60
+                         190-1EF          60
+        SFR0             0-1F          20           1
+        SFR1             80-9F          20           1
+        SFR2             100-10F          10           1
+        SFR3             180-18F          10           1
+        STRCODE          4-1FFF        1FFC           2
+        STRING           4-1FFF         100           2
+
+                                  Symbol Table
+
+__Habs1              abs1        0  __Hbank0             bank0       0
+__Hbank1             bank1       0  __Hbank2             bank2       0
+__Hbank3             bank3       0  __Hcinit             cinit       0
+__Hclrtext           clrtext     0  __Hcode              code        0
+__Hcommon            common      0  __Hconfig            config      0
+__Heeprom_data       eeprom_data 0  __Hfunctab           functab     0
+__Hidloc             idloc       0  __Hinit              init        0
+__Hintentry          intentry    0  __Hmaintext          maintext    0
+__Hpa_nodes0         pa_nodes0   0  __Hpowerup           powerup     0
+__Hram               ram         0  __Hreset_vec         reset_vec   0
+__Hsfr0              sfr0        0  __Hsfr1              sfr1        0
+__Hsfr2              sfr2        0  __Hsfr3              sfr3        0
+__Hspace_1           (abs)       0  __Hspace_2           (abs)       0
+__Hspace_3           (abs)       0  __Hstack             stack       0
+__Hstrings           strings     0  __Htext              text        0
+__Labs1              abs1        0  __Lbank0             bank0       0
+__Lbank1             bank1       0  __Lbank2             bank2       0
+__Lbank3             bank3       0  __Lcinit             cinit       0
+__Lclrtext           clrtext     0  __Lcode              code        0
+__Lcommon            common      0  __Lconfig            config      0
+__Leeprom_data       eeprom_data 0  __Lend_init          end_init    0
+__Lfunctab           functab     0  __Lidloc             idloc       0
+__Linit              init        0  __Lintentry          intentry    0
+__Lmaintext          maintext    0  __Lpa_nodes0         pa_nodes0   0
+__Lpowerup           powerup     0  __Lram               ram         0
+__Lreset_vec         reset_vec   0  __Lsfr0              sfr0        0
+__Lsfr1              sfr1        0  __Lsfr2              sfr2        0
+__Lsfr3              sfr3        0  __Lspace_0           (abs)       0
+__Lspace_1           (abs)       0  __Lspace_2           (abs)       0
+__Lspace_3           (abs)       0  __Lstack             stack       0
+__Lstrings           strings     0  __Ltext              text        0
+__S0                 (abs)       0  __S1                 (abs)       0
+__S3                 (abs)       0  ___int_sp            stack       0
+___sp                stack       0  ___stackhi           (abs)       0
+___stacklo           (abs)       0  _main                             
+__Hspace_0           (abs)       4  __Hend_init          end_init    4
+intlevel0            functab     0  intlevel1            functab     0
+intlevel2            functab     0  intlevel3            functab     0
+intlevel4            functab     0  intlevel5            functab     0
+reset_vec            reset_vec   0  start                init        0
+start_initialization                

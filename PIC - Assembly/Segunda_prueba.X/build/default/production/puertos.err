@@ -1,0 +1,19 @@
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 14 : Found opcode in column 1. (bsf)
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 14 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 15 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 16 : Executable code and data must be defined in an appropriate section
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 17 : Executable code and data must be defined in an appropriate section
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 18 : Found opcode in column 1. (bcf)
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 18 : Executable code and data must be defined in an appropriate section
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 20 : Found opcode in column 1. (clrf)
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 20 : Executable code and data must be defined in an appropriate section
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 21 : Found opcode in column 1. (clrf)
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 21 : Executable code and data must be defined in an appropriate section
+Error[150]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 23 : Labels must be defined in a code or data section when making an object file
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 23 : Executable code and data must be defined in an appropriate section
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 24 : Found opcode in column 1. (movwf)
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 24 : Executable code and data must be defined in an appropriate section
+Warning[203] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 25 : Found opcode in column 1. (goto)
+Error[151]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 25 : Operand contains unresolvable labels or is too complex
+Error[152]   C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 25 : Executable code and data must be defined in an appropriate section
+Warning[205] C:\USERS\KEVIN ROJAS\MPLABXPROJECTS\SEGUNDA_PRUEBA.X\PUERTOS.ASM 27 : Found directive in column 1. (END)

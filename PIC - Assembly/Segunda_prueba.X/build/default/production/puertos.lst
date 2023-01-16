@@ -1,0 +1,69 @@
+MPASM 5.83                       PUERTOS.ASM   3-24-2019  14:32:45         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ;include <pic16f877a.inc>
+                      00002 
+                      00003 ;__CONFIG _XT_OSC & _PWRTE_ON & _BODEN_ON & _CP_OFF & _WDT_OFF & _LVP_OFF
+                      00004     
+                      00005 ;CBLOCK 0x20
+                      00006 ;mini_buffer
+                      00007 ;ENDC
+                      00008 
+  00000003            00009 STATUS equ 0x03
+  00000006            00010 PORTB equ 0x06
+  00000008            00011 PORTD equ 0x08
+                      00012  
+                      00013 ;org 0
+Warning[203]: Found opcode in column 1. (bsf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00014 bsf STATUS, 5 ; BANK 1
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00015     clrf PORTD
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00016     movlw 0xff          
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00017     movwf PORTB 
+Warning[203]: Found opcode in column 1. (bcf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00018 bcf STATUS, 5  ; BANK 0
+                      00019     
+Warning[203]: Found opcode in column 1. (clrf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00020 clrf PORTD ; Refrescando el puerto de salida
+Warning[203]: Found opcode in column 1. (clrf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00021 clrf PORTB ; Refrescando el puerto de entrada
+                      00022     
+Error[150]  : Labels must be defined in a code or data section when making an object file
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00023 repite movf PORTB,W
+Warning[203]: Found opcode in column 1. (movwf)
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00024 movwf PORTD
+Warning[203]: Found opcode in column 1. (goto)
+Error[151]  : Operand contains unresolvable labels or is too complex
+Error[152]  : Executable code and data must be defined in an appropriate section
+0000                  00025 goto repite
+                      00026     
+Warning[205]: Found directive in column 1. (END)
+                      00027 END
+MPASM 5.83                       PUERTOS.ASM   3-24-2019  14:32:45         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PORTB                             00000006
+PORTD                             00000008
+STATUS                            00000003
+__16F877A                         00000001
+repite                            00000000
+
+Errors   :    12
+Warnings :     7 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
